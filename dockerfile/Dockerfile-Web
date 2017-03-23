@@ -1,0 +1,35 @@
+######################################
+#Docker File to install rabbitmq and configure queue system
+# 
+#####################################
+
+#Starting with Base image ubuntu which has git and some basic softwares required.
+FROM ubuntu
+
+#Label
+LABEL "Author"="Dipin Thomas"
+
+#Working Director
+WORKDIR /home
+
+#Update Repo
+RUN apt-get update
+
+#Installing Apache
+RUN apt-get install -y apache2 
+
+#Installing Git
+RUN apt-get install -y git
+
+#Pull publisher from git repo
+RUN git clone https://github.com/dipinthomas/docker-rabbitmq.git
+
+#Move content to Web Document root
+RUN cp docker-rabbitmq/rabbitmq-web/* /var/www/html/
+
+#exposing the ports
+EXPOSE 	80 
+
+
+#Start the service
+CMD service apache2 start && bash
