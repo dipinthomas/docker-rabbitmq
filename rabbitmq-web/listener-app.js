@@ -5,8 +5,7 @@ Stomp.WebSocketClass = SockJS;
 var mq_username = "guest",
     mq_password = "guest",
     mq_vhost    = "/",
-    #mq_url      = 'http://' + window.location.hostname + ':15674/stomp',
-    mq_url      = 'http://' + localhost + ':15674/stomp',
+    mq_url      = 'http://' + window.location.hostname + ':15674/stomp',
 
     // The queue we will read. The /topic/ queues are temporary
     // queues that will be created when the client connects, and
@@ -54,3 +53,4 @@ window.onload = function () {
     mq_vhost
   );
 }
+
