@@ -16,7 +16,7 @@ WORKDIR /home
 RUN apt-get install -y python \
 
 #Install pika python module
-	&& apt-get install python-pika 
+	&& apt-get install -y python-pika 
 
 
 #Updating apt repository to install rabbitmq
@@ -57,6 +57,4 @@ EXPOSE 	15670 \
 	15672 \
 	15674
 
-
-#Start the service
 CMD service rabbitmq-server start && bash

@@ -30,6 +30,5 @@ RUN cp docker-rabbitmq/rabbitmq-web/* /var/www/html/
 #exposing the ports
 EXPOSE 	80 
 
-
 #Start the service
 CMD service apache2 start && bash
